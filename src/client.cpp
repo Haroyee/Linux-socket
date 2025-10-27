@@ -1,28 +1,28 @@
 #include"socket.h"
 #include<iostream>
 #include<string>
-
+#include<cstring>
 int main(){
-	using namespace network::socket;
 
 	Socket c_socket;
-	bool flag =  c_socket.connect("127.0.0.1",8889);
-	if(flag){
-		std::string sbuff;
-		
-	while(sbuff.compare("0")){
-		sbuff.clear();
-		std::cin>>sbuff;
-		c_socket.send(sbuff.c_str(),sbuff.size());
 
-		char recvBuff[1024];
-		c_socket.recv(recvBuff,sizeof(recvBuff));
-		std::cout<<recvBuff<<std::endl;
+	if(c_socket.Connect("127.0.0.1",8889)){
+		std::string sbuf;
+		char rbuf[1024];
+		while(sbuf.compare("0")){
+			sbuf.clear();
+			std::cin>>sbuf;
+			if(c_socket.Send(sbuf.c_str(),sbuf.size())){
+				memset(rbuf,0,sizeof(rbuf));
+				c_socket.Recv(rbuf,sizeof(rbuf));
+				std::cout<<rbuf<<std::endl;
+			}
+
 		
-	}
-	
-	}
-	c_socket.close();
+		}
+	c_socket.Close();	
+	}	
+
 	return 0;
 }
 

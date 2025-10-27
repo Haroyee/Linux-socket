@@ -7,8 +7,6 @@
 #include <unistd.h>           // close()、read()、write()
 #include <string>
 
-namespace network{
-	namespace socket{
 class Socket{
 	private:
 		int m_sockfd;
@@ -20,24 +18,22 @@ class Socket{
 
 		~Socket();
 
-		bool bind(const std::string &,int);
+		bool Bind(const std::string &,int);
 
-		bool connect(const std::string &,int);
+		bool Connect(const std::string &,int);
 
-		bool listen(int);
+		bool Listen(int);
 
-		int accept();
+		int Accept();
 
-		int send(const char *,int);
+		int Send(const char *,int);
 
-		int recv(char *,int);
+		int Recv(char *,int);
 
-		void close();
+		void Close();
 
 
 
 };
-}
-}
 
 #endif
