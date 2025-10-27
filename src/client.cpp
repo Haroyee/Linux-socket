@@ -1,28 +1,29 @@
-#include"socket.h"
-#include<iostream>
-#include<string>
-#include<cstring>
-int main(){
+#include "socket.h"
+#include <iostream>
+#include <string>
+#include <cstring>
+int main()
+{
 
 	Socket c_socket;
 
-	if(c_socket.Connect("127.0.0.1",8889)){
+	if (c_socket.Connect("127.0.0.1", 8889))
+	{
 		std::string sbuf;
 		char rbuf[1024];
-		while(sbuf.compare("0")){
+		while (sbuf.compare("0"))
+		{
 			sbuf.clear();
-			std::cin>>sbuf;
-			if(c_socket.Send(sbuf.c_str(),sbuf.size())){
-				memset(rbuf,0,sizeof(rbuf));
-				c_socket.Recv(rbuf,sizeof(rbuf));
-				std::cout<<rbuf<<std::endl;
+			std::cin >> sbuf;
+			if (c_socket.Send(sbuf.c_str(), sbuf.size()))
+			{
+				memset(rbuf, 0, sizeof(rbuf));
+				c_socket.Recv(rbuf, sizeof(rbuf));
+				std::cout << rbuf << std::endl;
 			}
-
-		
 		}
-	c_socket.Close();	
-	}	
+		c_socket.Close();
+	}
 
 	return 0;
 }
-

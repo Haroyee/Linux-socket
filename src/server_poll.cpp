@@ -1,7 +1,7 @@
-#include"socket.h"
+#include "socket.h"
 
-int main(){
-    
+int main()
+{
+
     return 0;
 }
-
