@@ -31,7 +31,7 @@ class Socket{
 		int Recv(char *,int);
 
 		void Close();
-
+        
 
 
 };

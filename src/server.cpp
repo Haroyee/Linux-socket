@@ -5,7 +5,7 @@
 int main(){
 	
 	Socket s_socket;
-	if(!s_socket.Bind("127.0.0.1",8889)) return 0;
+	if(!s_socket.Bind("0.0.0.0",8889)) return 0;
 
 	if(!s_socket.Listen(1024)) return 0;
 

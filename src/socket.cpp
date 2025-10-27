@@ -94,4 +94,6 @@ int Socket::Recv(char* buf ,int len){
 
 void Socket::Close(){
 	if(m_sockfd>0) close(m_sockfd);
+
 }
+
