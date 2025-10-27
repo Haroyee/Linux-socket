@@ -20,6 +20,12 @@ client: build/client.o build/socket.o
 server_select: build/server_select.o build/socket.o
 	$(CC) $^ -o output/$@ $(LDFLAGS) $(LDLIBS)
 
+server_poll: build/server_poll.o build/socket.o
+	$(CC) $^ -o output/$@ $(LDFLAGS) $(LDLIBS)
+
+server_epoll: build/server_epoll.o build/socket.o
+	$(CC) $^ -o output/$@ $(LDFLAGS) $(LDLIBS)
+
 build/%.o: %.cpp
 	$(CC) -c $< -o $@ $(CFLAGS)
 
