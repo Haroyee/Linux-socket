@@ -5,9 +5,9 @@ int main(){
 	
 	using namespace network::socket;
 	Socket s_socket;
-	s_socket.bind("127.0.0.1",8888);
+	if(!s_socket.bind("127.0.0.1",8889)) return 0;
 	
-	s_socket.listen(1024);
+	if(!s_socket.listen(1024)) return 0;
 
 	while(true){
 	
@@ -21,7 +21,7 @@ int main(){
 		}
 	}
 
-	std::cout<<"server ps"<<std::endl;
+
 
 	return 0;
 }

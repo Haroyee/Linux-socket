@@ -1,2 +1,2 @@
 #!/bin/bash
-./output/client &
+./output/client 
