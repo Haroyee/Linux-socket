@@ -44,4 +44,5 @@ sites
 .vscode
 output
 lib
+build
 #makefile
